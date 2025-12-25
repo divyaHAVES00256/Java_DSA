@@ -3,51 +3,27 @@
 import java.util.PriorityQueue;
 
 public class ConnectRopes {
-    // static class Ropes implements Comparable<Ropes> {
-    //     int l;
-
-    //     public Ropes(int l){
-    //         this.l = l;
-    //     }
-
-    //     @Override
-    //     public int comapreTo(Ropes r){
-    //         return this.l - r.l;
-    //     }
-    // }
     public static void main(String[] args) {
-        int[] arr = {4, 3, 2, 6};
-        // int[] arr = {2, 3, 3, 6, 4};
-
-
-        // Arrays.sort(arr);
-        // int sum = arr[0];
-        // int res = 0;
-
-        // for (int i = 1; i < arr.length; i++) {
-        //     sum += arr[i];   
-        //     res += sum;      
-        //     System.out.println(res + "Intermediate sum: " + sum);
-        // }
-
+        // int[] arr = {4, 3, 2, 6};
+        int[] arr = { 4, 3, 3, 2, 6 };
+        
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-        for(int i = 0; i<arr.length; i++) {
-            pq.add(arr[i]);
-        }
+        for(int i = 0; i<arr.length; i++) pq.add(arr[i]);
+        
+        int ans = 0;
 
-        int sum = 0;
-        // int res = 0;
-        while(pq.size()>1){
+        while(pq.size()>1) {
             int a = pq.poll();
             int b = pq.poll();
-            int s = a+b;
 
-            pq.add(s);
+            int sum = a+b;
 
-            sum+=s;
+            ans += sum;
 
-            System.out.println(sum);
+            System.out.println(ans + "  ans : sum " + sum);
+
+            pq.add(sum);
         }
     }
 }
