@@ -38,4 +38,29 @@ public class Leet125 {
         }
         return true;
     }
+    //most optimize sc=1, tc=n
+    public boolean isPalindrome3(String s) {
+        int l = 0, r = s.length() - 1;
+
+        while (l < r) {
+            // Skip non-alphanumeric from left
+            while (l < r && !Character.isLetterOrDigit(s.charAt(l))) {
+                l++;
+            }
+            // Skip non-alphanumeric from right
+            while (l < r && !Character.isLetterOrDigit(s.charAt(r))) {
+                r--;
+            }
+
+            // Compare characters on the fly (case-insensitive)
+            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r))) {
+                return false;
+            }
+            
+            l++;
+            r--;
+        }
+
+        return true;
+    }
 }
