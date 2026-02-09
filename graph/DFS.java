@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BFS {
-
+public class DFS {
     static void addEdge(ArrayList<ArrayList<Integer>> adj, int from, int to) {
         adj.get(from).add(to);
         adj.get(to).add(from);
@@ -21,30 +20,7 @@ public class BFS {
         }
     }
 
-    static void bfs(ArrayList<ArrayList<Integer>> adj , int src){
-        Queue<Integer> q = new LinkedList<>();
-        boolean[] chk = new boolean[adj.size()];
-        int[] ans = new int[adj.size()];
-        
-        q.add(src);
-        int idx = 0;
-        while(idx<adj.size()){
-            int rem = q.remove(); //curr element
-            
-            if(!chk[rem]){
-                ans[idx++] = rem;
-                chk[rem] = true;
-
-                ArrayList<Integer> n = adj.get(rem);
-                for(int i = 0; i<n.size(); i++){
-                    if(!chk[n.get(i)])q.add(n.get(i));
-                }
-                // System.out.println("q : " +q);
-            }
-        }
-
-        System.out.println("ans : " +Arrays.toString(ans));
-    }
+    
 
     public static void main(String[] args) {
 
@@ -76,9 +52,9 @@ public class BFS {
         addEdge(adj,3, 5);
         addEdge(adj,4, 5);
         addEdge(adj,5, 6);
-        addEdge(adj,7, 8);
+        
 
         display(adj);
-        bfs(adj, 0);
+        
     }
 }
