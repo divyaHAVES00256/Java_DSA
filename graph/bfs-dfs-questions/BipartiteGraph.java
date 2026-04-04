@@ -2,9 +2,10 @@ import java.util.Arrays;
 
 public class BipartiteGraph {
     //tc=(V+2E)  
+    //it is similar to keeping track of the parents  like we did in dfscycledetcetionundir
     public boolean ispossible(int curr, int prev, boolean[] chk, int[] color, int[][] graph){
         //runs total chk length-> V
-        chk[curr] = true; //2 amrk current node true
+        chk[curr] = true; //2 mark current node true
        
         color[curr] = -color[prev]; //3 mark current node diffrent from prev(previous node is basically current's parent)
 

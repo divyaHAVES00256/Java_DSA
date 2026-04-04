@@ -58,7 +58,7 @@ public class CycleDetectionUndirected {
                     
                     ArrayList<Integer> n = adj.get(rem);
                     for(int j  = 0; j<n.size(); j++){
-                        //if not visited add and mark it true : normal
+                        //if not visited add then mark it true : normal
                         if(!vis[n.get(j)]){
                             vis[n.get(j)] = true;
                             parent[n.get(j)] = rem;
