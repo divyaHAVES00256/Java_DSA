@@ -37,12 +37,6 @@ public class TopoSort{
         return arr;
     }
 
-    public static void topoSortbfs(int v, ArrayList<ArrayList<Integer>> adj){
-        Stack<Integer> st = new Stack<>();
-        boolean vis[] = new boolean[v];
-
-        
-    }
     public static void main(String[] args) {
          // Number of vertices
         int V = 6;
