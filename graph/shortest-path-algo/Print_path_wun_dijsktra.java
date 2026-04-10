@@ -1,8 +1,5 @@
-// import java.lang.LiveStackFrame.PrimitiveSlot;
 import java.util.*;
-//graph ust not have any negative weghts or negative cycles, 
-//used for wieghted graphs
-public class Dijkstra {
+public class Print_path_wun_dijsktra {
     static class Pair{
         int node;
         int dis;
@@ -12,53 +9,61 @@ public class Dijkstra {
             this.dis = dis;
         }
     }
-
-    //tc = v(fill ans) + elogv
-    //mc = e+v + v
-    public static void path(int src, List<List<Pair>> adj){
-        //1 Intialize queue -> stores shortest dis 
-        //it contains -> dis after updation
-        PriorityQueue<Pair> pq = new PriorityQueue<>( //stores all edges(n+e)
+    //print path from src to dest in weighted, undirected graph using dijsktra
+    //tc = dijkstra + v
+    public static void path(List<List<Pair>> adj, int src, int dest){
+        PriorityQueue<Pair> pq = new PriorityQueue<>(
             (a, b) -> {
-                if(a.dis == b.dis) return Integer.compare(a.node, b.node);
+                if(a.dis == b.dis){
+                    return Integer.compare(a.node, b.node);
+                }
                 return Integer.compare(a.dis, b.dis);
             }
         );
-        //2 Intialize ans
-        int[] ans = new int[adj.size()]; //v
-        Arrays.fill(ans, Integer.MAX_VALUE); //run till v
 
-        ans[src] = 0; //src must have shortest dis 0
+        int[] ans = new int[adj.size()];
+        Arrays.fill(ans, Integer.MAX_VALUE);
+        ans[src] = 0;
 
-        //3 Store pair in the queue only which when we ecounter shorter dis
+        //for keeping track of the path, we simply track where i am coming from
+        //memoization
+        int[] parent = new int[adj.size()];
+        for(int i = 0; i<parent.length; i++) parent[i] = i;
+
         pq.add(new Pair(src, 0));
-        
-        while(!pq.isEmpty()){ //v
-            //a :  poll shortest (top) from the top
-            Pair p = pq.poll(); //sort log(v^2)
-            System.out.println(p.node);
-            //b Skip outdated entries
-            if (p.dis > ans[p.node]) continue; //
-            
-            //c :  check neigbours of p and add those pair which is shorter from already filled distance in the ans
-            List<Pair> arr = adj.get(p.node); 
-            for(Pair n : arr){ //v-1
-                //updated dis is less than what is present in the ans
-                int newDist = p.dis + n.dis;
-                if(newDist < ans[n.node]) {
-                    pq.add(new Pair(n.node, newDist)); //sort log(v^2)
-                    ans[n.node] = newDist;
+        while(!pq.isEmpty()) {
+            Pair p = pq.poll();
+
+            if (p.dis > ans[p.node]) continue;
+
+            List<Pair> neigh = adj.get(p.node);
+
+            for(Pair n : neigh){
+                int newDist = n.dis + p.dis;
+                if(newDist < ans[n.node]){
+                    ans[n.node] = newDist;  //update ans
+                    parent[n.node] = p.node; //add parent for node
+
+                    pq.add(new Pair(n.node, newDist));
                 }
             }
         }
 
-        System.out.println(Arrays.toString(ans));
-    }
+        ArrayList<Integer> shortest = new ArrayList<>();
+        System.out.println(Arrays.toString(parent));
 
+        while(parent[dest]!=dest) {
+            shortest.add(0, dest);
+            dest = parent[dest];
+        }
+        shortest.add(0, dest);
+        System.out.println(shortest);
+                    System.out.println(Arrays.toString(ans));
+    }
 
     public static void main(String[] args) {
         // Number of vertices
-        int V = 6  ;
+        int V = 6 ;
 
         // Create adjacency list for the graph
         List<List<Pair>> adj = new ArrayList<>();
@@ -109,8 +114,25 @@ public class Dijkstra {
         adj.get(5).add(new Pair(2, 6));
         adj.get(5).add(new Pair(3, 2));
         adj.get(5).add(new Pair(4, 3));
-        path(0, adj);
+
+
+        // adj.get(0).add(new Pair(1, 2));
+        // adj.get(0).add(new Pair(3, 1));
+
+        // adj.get(1).add(new Pair(0, 2));
+        // adj.get(1).add(new Pair(4, 5));
+        // adj.get(1).add(new Pair(2, 4));
+
+        // adj.get(2).add(new Pair(1, 4));
+        // adj.get(2).add(new Pair(4, 1));
+        // adj.get(2).add(new Pair(3, 3));
+
+        // adj.get(3).add(new Pair(0, 1));
+        // adj.get(3).add(new Pair(2, 3));
+
+        // adj.get(4).add(new Pair(1, 5));
+        // adj.get(4).add(new Pair(2, 1));
+        path(adj, 0, 4);
         
     }
-
 }

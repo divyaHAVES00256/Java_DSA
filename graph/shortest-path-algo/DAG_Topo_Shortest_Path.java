@@ -26,7 +26,7 @@ public class DAG_Topo_Shortest_Path {
     }
 
 
-    //using topo sort
+    //2 using topo sort
     //(why? we are doing path relaxation -> imagine ts = a b c then it is for sure that a and b would have been alaready analyzed before reaching c)
     
     //tc = e+n
