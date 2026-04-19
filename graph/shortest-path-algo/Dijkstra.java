@@ -38,7 +38,7 @@ public class Dijkstra {
             Pair p = pq.poll(); //sort log(v^2)
             System.out.println(p.node);
             //b Skip outdated entries
-            if (p.dis > ans[p.node]) continue; //
+            if (p.dis > ans[p.node]) continue; 
             
             //c :  check neigbours of p and add those pair which is shorter from already filled distance in the ans
             List<Pair> arr = adj.get(p.node); 

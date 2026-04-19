@@ -22,7 +22,7 @@ public class DFS {
         }
     }
 
-    //graph is not disconnected
+    //graph is disconnected
     public static void dfs(int v, ArrayList<ArrayList<Integer>> adj, boolean[] visited, ArrayList<Integer> ans){
         //mark curr true
         visited[v] = true;
@@ -44,7 +44,6 @@ public class DFS {
 
     }
 
-    //graph is disconnected
     public static void disconnected(int v, ArrayList<ArrayList<Integer>> adj){
        boolean visited[] = new boolean[v];
         ArrayList<Integer> ans = new ArrayList<>();
