@@ -22,7 +22,7 @@ public class BellmanFord {
                 int v = e.v;
                 int w = e.wt;
 
-                if (dis[u] != Integer.MAX_VALUE && dis[u] + w < dis[v]) {
+                if (dis[u] != 1e8 && dis[u] + w < dis[v]) {
                     dis[v] = dis[u] + w;
                 }
             }
@@ -36,7 +36,7 @@ public class BellmanFord {
             int v = e.v;
             int w = e.wt;
 
-            if (dis[u] != Integer.MAX_VALUE && dis[u] + w < dis[v]) {
+            if (dis[u] != 1e8 && dis[u] + w < dis[v]) {
                 hasCycle = true;
                 break;
             }
@@ -63,7 +63,7 @@ public class BellmanFord {
         int src = 0;
 
         int[] dis = new int[n];
-        Arrays.fill(dis, Integer.MAX_VALUE);
+        Arrays.fill(dis, (int)(1e8));
         dis[src] = 0;
 
         bellmanFord(src, n, edges, dis);
