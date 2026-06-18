@@ -10,6 +10,7 @@ public class BottomUp {
 
         // Base case:
         // There is 1 way to make sum 0 -> pick nothing
+        //but what is the arr contain elemnt 0 as well?
         for (int i = 0; i <= n; i++) {
             dp[i][0] = 1;
         }

@@ -21,8 +21,15 @@ public class Memoization {
          System.out.println(dp[n][k] + " before "+ n + " "+k);
 
         // sum formed
-        if (k == 0) {
-            return 1;
+        //ISSUE : we did not simply return 1 when k == 0
+        //cuz target the array may contains 0 {0,0,0}, and to encounter all 0s we must not prematuarly stop memo
+        // if ( k == 0) {
+        //     return 1; // <--- Premature exit! 
+        // }
+        
+        //FIX
+        if (n == 0 && k == 0) {
+            return 1; 
         }
 
         // no elements left
@@ -55,8 +62,8 @@ public class Memoization {
 
     public static void main(String[] args) {
 
-        int[] arr = {2, 3, 5, 16, 8, 10};
-        int k = 10;
+        int[] arr = {0,0};
+        int k = 0;
 
         int ans = perfectSum(arr, k);
 

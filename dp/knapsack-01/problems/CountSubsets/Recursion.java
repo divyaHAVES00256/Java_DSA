@@ -11,8 +11,9 @@ public class Recursion {
     static int recur(int[] arr, int k, int n) {
 
         // sum formed
-        if (k == 0) {
-            return 1;
+        //look for memo expalnation here 
+        if (n == 0 && k == 0) {
+            return 1; 
         }
 
         // no elements left

@@ -54,8 +54,8 @@ public class BottomUp {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1,1,2,3};
-        int diff = 1;
+        int arr[] = {1};
+        int diff = 2;
 
         System.out.println(countsubset(arr, diff));
     }

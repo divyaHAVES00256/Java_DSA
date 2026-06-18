@@ -10,7 +10,7 @@ public class BottomUpOptimal {
             sum+=i;
         }
         // If sum - diff is odd, or diff > sum, it's impossible to partition
-        if ((sum - diff) < 0 || (sum - diff) % 2 != 0) {
+        if ((sum + diff) < 0 || (sum + diff) % 2 != 0) {
             return 0;
         }
 
@@ -46,8 +46,8 @@ public class BottomUpOptimal {
     }
 
     public static void main(String[] args) {
-        int arr[] = {2};
-        int diff = 2;
+        int arr[] = {0};
+        int diff = 0;
 
         System.out.println(countsubset(arr, diff));
     }
