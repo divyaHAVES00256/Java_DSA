@@ -2,9 +2,10 @@ import java.util.Arrays;
 //Bottom-Up DP → uses iteration/tabulation
 //tc = N*W
 //sc = N*W
+//max profit 
 public class BottomUp {
     public static int knapsack(int[] wt, int[] prof, int cap, int n, int[][] dp){
-        //1 INTIALIZATION (if n==0 or cap==0)
+        //1 INTIALIZATION (if n==0 or cap==0) -> no profit
         for(int i = 0; i<dp.length; i++){
             for(int j = 0; j<dp[0].length; j++){
                 if(i == 0 || j == 0) dp[i][j] = 0;
