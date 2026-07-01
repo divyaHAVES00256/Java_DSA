@@ -1,0 +1,1 @@
+{"name":"Local: Main","url":"c:\\Users\\Acer\\OneDrive\\Desktop\\DSA\\jDSA.D\\dp\\lcs\\Main.java","tests":[{"id":1782832144270,"input":"3\n12 2\n6 7\n99 79","output":"YES\nNO\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\OneDrive\\Desktop\\DSA\\jDSA.D\\dp\\lcs\\Main.java","group":"local","local":true}
