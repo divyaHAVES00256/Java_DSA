@@ -56,6 +56,7 @@ public class BottomUp {
                 }
             }
         }
+        //add remaining
         while(n > 0){
             sb.append(a.charAt(n-1));
             n--;

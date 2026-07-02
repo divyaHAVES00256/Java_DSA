@@ -37,10 +37,13 @@ public class main {
         int j = m;
         StringBuilder  ans = new StringBuilder();
         while(i>0 && j>0){
+            //equla -> add once
             if(x.charAt(i-1) == y.charAt(j-1)){
                 ans.insert(0, x.charAt(i-1));
                 i--; j--;
-            } else {
+            } 
+            //not equal -> move to longer one
+            else {
                 if(dp[i-1][j] > dp[i][j-1]){
                     i--;
                 } else {
