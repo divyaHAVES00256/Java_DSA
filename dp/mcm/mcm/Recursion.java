@@ -1,5 +1,7 @@
+package mcm.mcm;
+
 public class Recursion{
-    //tc : 2^n (we try every possible parenthesization, which leads to exponential recursion)
+    //tc : n 2^n (we try every possible parenthesization, which leads to exponential recursion)
     //sc : n (comes from the recursion call stack depth in the worst case)
     static int matrixMultiplication(int arr[]) {
         int n = arr.length;

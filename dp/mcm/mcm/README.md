@@ -72,5 +72,5 @@ The `for` loop finishes exploring all `k` values. The function calculates `Math.
 
 ---
 
-## 3.  Example with recursion tree
+## 5.  Example with recursion tree
 <img src="recurtree.png" alt="Recursion Tree" width="400">
