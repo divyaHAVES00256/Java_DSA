@@ -74,3 +74,11 @@ The `for` loop finishes exploring all `k` values. The function calculates `Math.
 
 ## 5.  Example with recursion tree
 <img src="recurtree.png" alt="Recursion Tree" width="400">
+
+---
+
+## 5.  Example with recursion tree
+- what is i and j
+- what is the base condition
+- how choices(k) are made? > how k loops works?
+- what would be temperory answer? 

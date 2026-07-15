@@ -19,7 +19,7 @@ public class Recusrion {
     boolean recur(String a, String b){
         if(a.equals(b)) return true; //if alreday equla- > return -> no further split requre
         
-        boolean flag = false;
+        boolean flag = false; //tells whether the current substrings are scrambled or not
         int n = a.length();
         for(int k = 1; k<=n-1; k++){
             //case 1 -> no swap (left to left and right to right)
