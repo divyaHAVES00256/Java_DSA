@@ -56,24 +56,24 @@ public class Kth_Ancestor {
         // Hint 4: If the distance equals k, print or return the ancestor.
         // Hint 5: Use the return value to propagate the distance up the tree.
 
-        // if(root == null) return -1;
-        // if(root == n) return 0;
-        // int leftdis = kthNode2(root.left, n, k);
-        // int rightdis = kthNode2(root.right, n, k);
-        // if(leftdis == -1 && rightdis == -1) return -1;
-        // int max = Math.max(leftdis, rightdis);
-        // if(max+1 == k){
-        //     System.out.println(root.data);
-        // }
-        // return max+1; //max here basially giving the distance 
+        if(root == null) return -1;
+        if(root == n) return 0;
+        int leftdis = kthNode2(root.left, n, k);
+        int rightdis = kthNode2(root.right, n, k);
+        if(leftdis == -1 && rightdis == -1) return -1;
+        int max = Math.max(leftdis, rightdis);
+        if(max+1 == k){
+            System.out.println(root.data);
+        }
+        return max+1; //max here basially giving the distance 
 
-        // int currDist = -1;
-        // if(leftdis != -1) currDist = leftdis + 1;
-        // else if(rightdis != -1) currDist = rightdis + 1;
-        // if(currDist == k) {
-        //     System.out.println(root.data + " ans2 "); //this gives kth
-        // }
-        // return currDist; //node to root distance
+        int currDist = -1;
+        if(leftdis != -1) currDist = leftdis + 1;
+        else if(rightdis != -1) currDist = rightdis + 1;
+        if(currDist == k) {
+            System.out.println(root.data + " ans2 "); //this gives kth
+        }
+        return currDist; //node to root distance
 
         
         //WHATEVER I DID DOWN BELOW IS COMPLETLY WRONG BECUASE I AM RETURNING LEVEL AND ANSWER IN THE SAME FYNCTION
