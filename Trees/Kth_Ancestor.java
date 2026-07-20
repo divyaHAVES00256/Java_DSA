@@ -67,13 +67,14 @@ public class Kth_Ancestor {
         }
         return max+1; //max here basially giving the distance 
 
-        int currDist = -1;
-        if(leftdis != -1) currDist = leftdis + 1;
-        else if(rightdis != -1) currDist = rightdis + 1;
-        if(currDist == k) {
-            System.out.println(root.data + " ans2 "); //this gives kth
-        }
-        return currDist; //node to root distance
+        
+        // int currDist = -1;
+        // if(leftdis != -1) currDist = leftdis + 1;
+        // else if(rightdis != -1) currDist = rightdis + 1;
+        // if(currDist == k) {
+        //     System.out.println(root.data + " ans2 "); //this gives kth
+        // }
+        // return currDist; //node to root distance
 
         
         //WHATEVER I DID DOWN BELOW IS COMPLETLY WRONG BECUASE I AM RETURNING LEVEL AND ANSWER IN THE SAME FYNCTION
