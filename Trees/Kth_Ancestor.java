@@ -75,22 +75,25 @@ public class Kth_Ancestor {
         // }
         // return currDist; //node to root distance
 
-        if(root == null) return -1;
-        if(root == n) return 0;
-
-        int left = kthNode2(root.left, n, k);;
-        int right = kthNode2(root.right, n, k);
         
-        if(left == -1 && right == -1){
-            return -1;
-        } 
+        //WHATEVER I DID DOWN BELOW IS COMPLETLY WRONG BECUASE I AM RETURNING LEVEL AND ANSWER IN THE SAME FYNCTION
+        //THE ABOVE CODE IS CORRECT
+        // if(root == null) return -1;
+        // if(root == n) return 0;
 
-        int max =  Math.max(left, right);
+        // int left = kthNode2(root.left, n, k);;
+        // int right = kthNode2(root.right, n, k);
+        
+        // if(left == -1 && right == -1){
+        //     return -1;
+        // } 
 
-        if(max+1 == k) {
-            return root.data;
-        } 
-         return max+1;
+        // int max =  Math.max(left, right);
+
+        // if(max+1 == k) {
+        //     return root.data;
+        // } 
+        //  return max+1;
         
         
         
