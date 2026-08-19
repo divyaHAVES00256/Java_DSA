@@ -1,3 +1,4 @@
+package Rat_In_Maze;
 import java.util.ArrayList;
 
 public class Optimal {
