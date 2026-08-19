@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Optimal {
     //time: 4^(n*n)
     //space: n*n
+    private int dirx[] = { 1,  0, 0, -1};
     private int diry[] = {0, -1, 1, 0};
     private char move[] = {'D', 'L', 'R', 'U'};
     
