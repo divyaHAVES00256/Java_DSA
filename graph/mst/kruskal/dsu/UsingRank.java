@@ -14,23 +14,40 @@ class UsingRank {
         }
 
         public int findUPar(int node) {
+            //ultimat root -> return
             if (node == parent.get(node)) {
                 return node;
             }
+
+            //else chamge currnt node parent to ultimate root
             int ulp = findUPar(parent.get(node));
             parent.set(node, ulp);
             return parent.get(node);
         }
 
         public void unionByRank(int u, int v) {
+            //find ultimate parent
             int ulp_u = findUPar(u);
             int ulp_v = findUPar(v);
+
+            //if ultimate parents are equal -> they must be conected
             if (ulp_u == ulp_v) return;
+
+            //else find ultimate parent ranks
+            //and connect sammler to larger
+
+            //if rank are not euqal -> there is no way possible thier rank will be changed
+            //hence only update parent of the smaller
             if (rank.get(ulp_u) < rank.get(ulp_v)) {
                 parent.set(ulp_u, ulp_v);
-            } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
+            } 
+            else if (rank.get(ulp_v) < rank.get(ulp_u)) {
                 parent.set(ulp_v, ulp_u);
-            } else {
+            } 
+            //rank is only changed when rank are equals
+            //update parent of the smaller
+            //update rank of the larger
+            else {
                 parent.set(ulp_v, ulp_u);
                 int rankU = rank.get(ulp_u);
                 rank.set(ulp_u, rankU + 1);
