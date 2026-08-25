@@ -4,9 +4,11 @@ import java.util.*;
 class UsingRank {
         
     static class DisjointSet {
+        int groups; //count connected componets
         List<Integer> rank = new ArrayList<>();
         List<Integer> parent = new ArrayList<>();
         public DisjointSet(int n) {
+            groups = n;
             for (int i = 0; i <= n; i++) {
                 rank.add(0);
                 parent.add(i);
@@ -52,6 +54,8 @@ class UsingRank {
                 int rankU = rank.get(ulp_u);
                 rank.set(ulp_u, rankU + 1);
             }
+
+            groups--;
         }
 
     }
@@ -75,6 +79,12 @@ class UsingRank {
                 System.out.println("Same");
             } else
                 System.out.println("Not Same");
+
+
+            //How to find conncted nodes?
+            //using dsu to find clusters
+            //only the ultimate root will have find[i] = i;
+            //so we simply need to count how many have find[i] = i;
     }
 
 }

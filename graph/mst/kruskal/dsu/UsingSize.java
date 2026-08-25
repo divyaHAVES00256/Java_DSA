@@ -4,10 +4,11 @@ import java.util.*;
 class UsingSize {
         
     static class DisjointSet {
+        int groups; //count connected componets
         List<Integer> size = new ArrayList<>();
         List<Integer> parent = new ArrayList<>();
         public DisjointSet(int n) {
-             
+            groups = n;
             for (int i = 0; i <= n; i++) {
                 size.add(1);
                 parent.add(i);
@@ -46,6 +47,7 @@ class UsingSize {
                 parent.set(ulp_v, ulp_u);
                 size.set(ulp_u, size.get(ulp_u)+size.get(ulp_v));
             }
+            groups--;
         }
 
     }
@@ -70,10 +72,7 @@ class UsingSize {
             } else
                 System.out.println("Not Same");
 
-            //How to find conncted nodes?
-            //using dsu to find clusters
-            //only the ultimate root will have parent[i] = i;
-            //so we simply need to count how many have parent[i]  i;
+            
     }
 
 }
